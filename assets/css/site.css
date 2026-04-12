@@ -415,7 +415,7 @@ img {
 }
 
 .vcl-table-wrap {
-  border: 1px solid var(--dp-border);
+  border: 1px solid var(--dp-table-head);
   margin-bottom: 24px;
 }
 
