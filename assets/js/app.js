@@ -206,7 +206,7 @@ function render(route = router.getRoute()) {
     buildUrl: router.buildUrl,
     escapeHtml,
     highlightDelphiCode,
-    renderCategoryCards: () => components.renderCategoryCards({ escapeHtml, siteData }),
+    renderCategoryCards: () => components.renderCategoryCards({ buildUrl: router.buildUrl, escapeHtml, siteData }),
     route,
     siteData,
   };

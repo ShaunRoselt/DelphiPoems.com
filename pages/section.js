@@ -11,7 +11,7 @@
             <div class="col-lg-6">
               <h1 class="cover-title">${escapeHtml(section.title)}</h1>
               <p class="cover-copy cover-copy--single">${escapeHtml(section.description)}</p>
-              <button class="btn btn-dp-primary" data-route="home">Back to Home</button>
+              <a class="btn btn-dp-primary" href="?page=home" data-route="home">Back to Home</a>
             </div>
             <div class="col-lg-6 text-center">
               <img src="${section.image}" alt="${escapeHtml(section.title)}" class="section-art" />
