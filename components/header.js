@@ -5,7 +5,6 @@
     const poemRoutes = Object.values(siteData.poemCollections).map((collection) => collection.listPage);
     const poemsActive = poemRoutes.some((page) => activePage === page || activePage.startsWith(`${page}/`));
     const aboutActive = activePage === "about";
-    const contactActive = activePage === "contact";
     const headerClass = activePage === "home" ? "site-header" : "site-header site-header--lined";
     const poemMenuItems = Object.values(siteData.poemCollections)
       .map((collection) => {
@@ -75,9 +74,6 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link ${aboutActive ? "is-active" : ""}" href="${router.buildUrl("about")}" data-route="about">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link ${contactActive ? "is-active" : ""}" href="${router.buildUrl("contact")}" data-route="contact">Contact</a>
                   </li>
                 </ul>
               </div>

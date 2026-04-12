@@ -46,36 +46,7 @@ const staticPages = {
       "A simple browseable format for learning, revising, and exploring concepts quickly.",
     ],
   },
-  contact: {
-    title: "Contact",
-    intro:
-      "Use the form below to open a prefilled email draft for questions, suggestions, corrections, or new poem ideas.",
-    email: "Me@ShaunRoselt.com",
-    submitLabel: "Open Email Draft",
-    statusMessage: "Your mail client should open with a prefilled draft.",
-    fields: [
-      {
-        id: "contact-name",
-        name: "name",
-        label: "Name",
-        type: "text",
-      },
-      {
-        id: "contact-email",
-        name: "email",
-        label: "Email",
-        type: "email",
-      },
-      {
-        id: "contact-message",
-        name: "message",
-        label: "Comment or Message",
-        type: "textarea",
-      },
-    ],
-  },
 };
-
 const dataStore = window.DelphiPoemsData || {};
 
 function getComponentIconPath(collectionKey, componentName, assetPath) {
@@ -194,7 +165,6 @@ const siteData = {
     "vcl-poems": sharedCards[1],
     "fmx-poems": sharedCards[2],
   },
-  staticPages,
   footerSearchTitle: "Looking for a specific poem?",
   footerSearchLabel: "Search for a poem:",
   footerSearchPlaceholder: "Search for a poem...",

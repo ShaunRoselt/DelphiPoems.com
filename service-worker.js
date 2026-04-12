@@ -1,4 +1,4 @@
-const CACHE_VERSION = "delphi-poems-v1";
+const CACHE_VERSION = "delphi-poems-v2";
 const APP_SHELL_CACHE = `${CACHE_VERSION}-app-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const EXTERNAL_ORIGINS = new Set(["https://cdn.jsdelivr.net"]);
@@ -16,7 +16,6 @@ const APP_SHELL_ASSETS = [
   "./components/header.js",
   "./pages/about.js",
   "./pages/catalog.js",
-  "./pages/contact.js",
   "./pages/home.js",
   "./pages/not-found.js",
   "./pages/poem.js",

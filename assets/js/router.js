@@ -58,11 +58,7 @@
     }
 
     if (page === "about") {
-      return { kind: "about", page, query, aboutPage: siteData.staticPages.about };
-    }
-
-    if (page === "contact") {
-      return { kind: "contact", page, query, contactPage: siteData.staticPages.contact };
+      return { kind: "about", page, query };
     }
 
     const matchedCollection = Object.values(siteData.poemCollections).find((entry) => page.startsWith(`${entry.listPage}/`));
@@ -116,11 +112,7 @@
     }
 
     if (route.kind === "about") {
-      return `${route.aboutPage.title} - Delphi Programming Poems`;
-    }
-
-    if (route.kind === "contact") {
-      return `${route.contactPage.title} - Delphi Programming Poems`;
+      return "About - Delphi Programming Poems";
     }
 
     return "Delphi Programming Poems";
@@ -158,6 +150,12 @@
 
     function start() {
       window.addEventListener("popstate", notifyRouteChange);
+
+      if (getPageParam() === "contact") {
+        setRoute("home", {}, { replace: true, scrollToTop: false });
+        return;
+      }
+
       notifyRouteChange();
     }
 

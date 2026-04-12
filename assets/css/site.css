@@ -401,46 +401,6 @@ img {
   margin-top: 0.55rem;
 }
 
-.contact-form {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.contact-form__field {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.contact-form__label {
-  color: var(--dp-heading);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.contact-form .form-control {
-  border: 1px solid var(--dp-border);
-  border-radius: 0;
-  box-shadow: none;
-  color: var(--dp-body);
-  font-size: 1.05rem;
-  min-height: 54px;
-}
-
-.contact-form textarea.form-control {
-  min-height: 200px;
-  resize: vertical;
-}
-
-.contact-form__submit {
-  justify-self: start;
-}
-
-.contact-form__status {
-  color: var(--dp-body);
-  font-size: 1rem;
-  margin: 0;
-}
-
 .section-art {
   width: min(320px, 100%);
   margin-inline: auto;
@@ -1000,10 +960,6 @@ img {
 
   .page-strip .page-title {
     margin-bottom: 1rem;
-  }
-
-  .contact-form__submit {
-    justify-self: stretch;
   }
 
   .catalog-search {

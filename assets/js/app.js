@@ -22,7 +22,7 @@ try {
     }
   });
 
-  ["home", "section", "about", "contact", "catalog", "search", "poem", "notFound"].forEach((pageName) => {
+  ["home", "section", "about", "catalog", "search", "poem", "notFound"].forEach((pageName) => {
     if (typeof pages[pageName] !== "function") {
       throw new Error(`Page module \"${pageName}\" did not load.`);
     }
@@ -237,9 +237,6 @@ function render(route = router.getRoute()) {
     case "about":
       mainContent = pages.about(pageContext);
       break;
-    case "contact":
-      mainContent = pages.contact(pageContext);
-      break;
     case "section":
       mainContent = pages.section({ ...pageContext, section: route.section });
       break;
@@ -338,36 +335,6 @@ function wireInteractions(route) {
       input.focus();
       input.setSelectionRange(input.value.length, input.value.length);
     }
-  }
-
-  const contactForm = document.querySelector("[data-contact-form]");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const status = contactForm.querySelector("[data-contact-status]");
-      const formData = new FormData(contactForm);
-      const recipient = String(contactForm.getAttribute("data-contact-email") || "").trim();
-      const name = String(formData.get("name") || "").trim();
-      const email = String(formData.get("email") || "").trim();
-      const message = String(formData.get("message") || "").trim();
-      const subject = name ? `Delphi Poems enquiry from ${name}` : "Delphi Poems enquiry";
-      const body = [
-        name ? `Name: ${name}` : "",
-        email ? `Email: ${email}` : "",
-        "",
-        message,
-      ]
-        .filter(Boolean)
-        .join("\n");
-
-      const mailtoUrl = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      if (status) {
-        status.hidden = false;
-      }
-
-      window.location.href = mailtoUrl;
-    });
   }
 
   document.querySelectorAll(".code-copy-button").forEach((button) => {
