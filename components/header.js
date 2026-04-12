@@ -7,6 +7,29 @@
     const aboutActive = activePage === "about";
     const contactActive = activePage === "contact";
     const headerClass = activePage === "home" ? "site-header" : "site-header site-header--lined";
+    const poemMenuItems = Object.values(siteData.poemCollections)
+      .map((collection) => {
+        const isActive = activePage === collection.listPage || activePage.startsWith(`${collection.listPage}/`);
+
+        return `
+          <li>
+            <a
+              class="dropdown-item poems-menu__item ${isActive ? "is-current" : ""}"
+              href="${router.buildUrl(collection.listPage)}"
+              data-route="${collection.listPage}"
+            >
+              <span class="poems-menu__icon-wrap">
+                <img src="${collection.card.image}" alt="" class="poems-menu__icon" />
+              </span>
+              <span class="poems-menu__body">
+                <span class="poems-menu__title">${collection.navTitle}</span>
+                <span class="poems-menu__description">${collection.description}</span>
+              </span>
+            </a>
+          </li>
+        `;
+      })
+      .join("");
 
     return `
       <header class="${headerClass}">
@@ -46,10 +69,8 @@
                     >
                       Poems
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li><a class="dropdown-item" href="${router.buildUrl("delphi-poems")}" data-route="delphi-poems">Delphi Poems</a></li>
-                      <li><a class="dropdown-item" href="${router.buildUrl("vcl-poems")}" data-route="vcl-poems">VCL Poems</a></li>
-                      <li><a class="dropdown-item" href="${router.buildUrl("fmx-poems")}" data-route="fmx-poems">FMX Poems</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end poems-menu">
+                      ${poemMenuItems}
                     </ul>
                   </li>
                   <li class="nav-item">
