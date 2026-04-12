@@ -89,6 +89,16 @@ try {
   const delphiKnownTypes = new Set(["application", "mainform", "talign", "talignment", "tcolors"]);
   const router = createRouter({ onRouteChange: render });
 
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator) || !/^https?:$/.test(window.location.protocol)) {
+    return Promise.resolve();
+  }
+
+  return navigator.serviceWorker.register("./service-worker.js").catch((error) => {
+    console.warn("Service worker registration failed.", error);
+  });
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -402,6 +412,7 @@ function wireInteractions(route) {
   });
 }
 
+  void registerServiceWorker();
   router.start();
 } catch (error) {
   window.DelphiPoemsAppBootError = {

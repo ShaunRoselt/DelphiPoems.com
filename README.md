@@ -4,7 +4,14 @@ Static single-page recreation of DelphiPoems.com using HTML, CSS, JavaScript, Bo
 
 ## Run locally
 
-Open `index.html` directly in your browser.
+Serve the site from a local HTTP server so the service worker and install flow can run.
+
+Example:
+
+- `python3 -m http.server 8080`
+- Open `http://localhost:8080/?page=home`
+
+The app still renders from `file://`, but PWA features such as offline caching and installation require `http://localhost` or HTTPS.
 
 Examples:
 
@@ -30,4 +37,5 @@ Examples:
 - Shared UI such as the header and footer lives under `components/`.
 - Page-specific renderers live under `pages/` at the repository root.
 - Catalog and poem data live under `data/` as plain script files rather than JSON so the site works when opened directly from `file://` without a build step.
+- PWA assets live in `manifest.webmanifest`, `service-worker.js`, and `assets/images/pwa/`.
 - About and Contact have dedicated page files under `pages/`.
