@@ -144,12 +144,18 @@ img {
     opacity: 0;
     pointer-events: none;
     right: 0;
-    transform: translateY(10px);
     transform-origin: top right;
-    transition:
-      opacity 160ms ease,
-      transform 160ms ease;
+    transition: opacity 160ms ease;
     visibility: hidden;
+  }
+
+  .nav-item.dropdown > .dropdown-menu::before {
+    content: "";
+    height: 1rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -1rem;
   }
 
   .nav-item.dropdown:hover > .dropdown-menu,
@@ -157,7 +163,6 @@ img {
   .nav-item.dropdown > .dropdown-menu.show {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
     visibility: visible;
   }
 
