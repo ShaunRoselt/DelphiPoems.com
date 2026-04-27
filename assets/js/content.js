@@ -1,3 +1,5 @@
+"use strict";
+
 const homeIntro = [
   `Delphi programming can be quite a task,
 But with our poems, you’ll learn it fast.

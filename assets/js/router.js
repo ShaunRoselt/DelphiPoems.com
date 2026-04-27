@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
   const { getCatalogItemBySlug, getPoemBySlug, getPoemCollectionByListPage, siteData } = window.DelphiPoemsContent;
   const catalogSortKeys = new Set(["category", "name", "description", "poem"]);

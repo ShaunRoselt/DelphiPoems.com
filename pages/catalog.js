@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
   const catalogTextCollator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
 

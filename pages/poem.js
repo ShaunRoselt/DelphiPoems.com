@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
   function renderBreadcrumb(poemName, poemRoute, collection, buildUrl, escapeHtml) {
     return `
